@@ -8,4 +8,4 @@ soundfont-cmdline-tools currently builds two applications:
 
 * sf2-test: Check integrity of soundfonts and output details on data
   structures. Main target was testing soundfont related classes.
-* sf2-split: Split all presets in a sountfont into seperate files
+* sf2-split: Split all presets in a soundfont into seperate files
