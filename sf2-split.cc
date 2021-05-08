@@ -42,12 +42,12 @@ int main(int argc, char* argv[])
     std::string origFilename = argv[1];
     // Remove directory if present.
     // Do this before extension removal incase directory has a period character.
-    const size_t last_slash_idx = origFilename.find_last_of("\\/");
+    const std::size_t last_slash_idx = origFilename.find_last_of("\\/");
     if (std::string::npos != last_slash_idx) {
       origFilename.erase(0, last_slash_idx + 1);
     }
     // Remove extension if present.
-    const size_t period_idx = origFilename.rfind('.');
+    const std::size_t period_idx = origFilename.rfind('.');
     if (std::string::npos != period_idx) {
         origFilename.erase(period_idx);
     }
@@ -69,7 +69,7 @@ int main(int argc, char* argv[])
         splitter.clearPresets();
         splitter.addPreset(presIter);
         // Create data for the preset
-        size_t dataLen;
+        std::size_t dataLen;
         char *dataSplit = splitter.createSplit(dataLen);
         if(dataSplit) {
           // Build output filename

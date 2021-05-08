@@ -15,7 +15,7 @@ void SF2FileSplitter::addPreset(presetMapIter_t preset)
   presetList.push_back(preset);
 }
 
-char *SF2FileSplitter::createSplit(size_t &len)
+char *SF2FileSplitter::createSplit(std::size_t &len)
 {
   // Clear working variables
   pbagIdxForPHDRList.clear();
@@ -191,13 +191,13 @@ void SF2FileSplitter::prepareSplit()
   }
 }
 
-size_t SF2FileSplitter::getLenOrWriteData(char* data, size_t maxLen)
+std::size_t SF2FileSplitter::getLenOrWriteData(char* data, std::size_t maxLen)
 {
   SF2Hydra& hydra = SF2SourceFile->getHydra();
   IFFChunk *infoChunk = SF2SourceFile->getInfo();
   SF2Samples &samples = SF2SourceFile->getSamples();
-  size_t len = 0;
-  size_t lenAdd;
+  std::size_t len = 0;
+  std::size_t lenAdd;
 
   // RIFF header
   lenAdd = 4;

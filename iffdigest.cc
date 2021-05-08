@@ -56,12 +56,12 @@ IFFChunk::operator=(const IFFChunk& ck)
 }
 
 bool
-IFFChunk::writeData(size_t &len, char* outData,
-  const enum IFFFormat iffFormat, const size_t maxLen)
+IFFChunk::writeData(std::size_t &len, char* outData,
+  const enum IFFFormat iffFormat, const std::size_t maxLen)
 {
   bool bOk = true;
-  size_t listLenStart = len;
-  size_t lenAdd;
+  std::size_t listLenStart = len;
+  std::size_t lenAdd;
   if(ctype == IFF_CHUNK_LIST) {
     // 'LIST'
     lenAdd = 4;

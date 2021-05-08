@@ -303,11 +303,11 @@ public:
   void clearPresets();
   void addPreset(presetMapIter_t preset);
 
-  char *createSplit(size_t &len);
+  char *createSplit(std::size_t &len);
 
 private:
   void prepareSplit();
-  size_t getLenOrWriteData(char* data, size_t maxLen);
+  std::size_t getLenOrWriteData(char* data, std::size_t maxLen);
   void addSampleAreaForSHDR(uint32_t shdrIdx);
 
   SF2File *SF2SourceFile;

@@ -3,6 +3,7 @@
 #ifndef __IFFPARSER_H
 #define __IFFPARSER_H
 
+#include <cstddef>
 #include <list>
 
 typedef unsigned int iff_ckid_t;
@@ -90,8 +91,8 @@ public:
   inline IFFChunkIterator ck_end() { return subchunks.end(); }
   inline IFFChunkIterator ck_find(iff_ckid_t id) { return subchunks.findChunk(id); }
   inline IFFChunkIterator ck_findNext(IFFChunkIterator i, iff_ckid_t id) { return subchunks.findNextChunk(i, id); }
-  bool writeData(size_t &len, char* outData,
-    const enum IFFFormat iffFormat, const size_t maxLen); // outData=0 calc length only
+  bool writeData(std::size_t &len, char* outData,
+    const enum IFFFormat iffFormat, const std::size_t maxLen); // outData=0 calc length only
 };
 
 class IFFDigest {
