@@ -53,7 +53,7 @@ char *SF2FileSplitter::createSplit(std::size_t &len)
   // 3. Actally write data to buffer
   if(!getLenOrWriteData(data, len)) {
     // Something went wrong: cleanup
-    delete data;
+    delete[] data;
     data = 0;
   }
   return data;
@@ -68,7 +68,7 @@ void SF2FileSplitter::addSampleAreaForSHDR(uint32_t shdrIdx)
   // sample area not yet inserted?
   bool bInsertNow = false;
   const sfSample_t& sample = hydra.getSample(shdrIdx);
-  std::map<uint32_t, std::map<uint32_t, uint32_t>>::iterator startIter;
+  std::map<uint32_t, std::map<uint32_t, uint32_t> >::iterator startIter;
   startIter = sampleAreas.find(sample.dwStart);
   // start found: Check if end not yet inserted
   if(startIter != sampleAreas.end()) {

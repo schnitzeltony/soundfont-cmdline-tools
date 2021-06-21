@@ -326,7 +326,7 @@ private:
   std::list<uint16_t> igenIdxList;
   std::list<uint16_t> shdrIdxList;
   std::map<uint16_t, uint16_t> shdrIdxMapper; // key:source / val:dest
-  std::map<uint32_t/*start*/, std::map<uint32_t/*end*/, uint32_t/*offset*/>> sampleAreas;
+  std::map<uint32_t/*start*/, std::map<uint32_t/*end*/, uint32_t/*offset*/> > sampleAreas;
 
   uint32_t sampleCountTotal;
 };
