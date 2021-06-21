@@ -98,7 +98,7 @@ int main(int argc, char* argv[])
         }
       }
     }
-    delete wrFileName;
+    delete[] wrFileName;
   }
 
   munmap(data, stbuf.st_size);
